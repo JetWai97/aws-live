@@ -117,7 +117,7 @@ def DeleteEmp():
     emp_id = request.form['emp_id']
     mycursor = db_conn.cursor()
     deleteemp = "DELETE FROM employee WHERE emp_id = %s"
-    mycursor.execute(deleteemp,(emp_id))
+    mycursor.execute(deleteemp, (emp_id))
     db_conn.commit()
     
 
