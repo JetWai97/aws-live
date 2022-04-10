@@ -43,7 +43,7 @@ def diratt():
 def dirupdate():
     return render_template('Payroll.html')
 
-@app.route("/payroll", methods=['GET','POST'])
+@app.route("/payupdate", methods=['GET','POST'])
 def dirpay():
     emp_id = request.form.get['emp_id']
     salary = request.form.get['salary']
