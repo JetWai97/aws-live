@@ -57,7 +57,7 @@ def dirpay():
     return render_template("PayOut.html")
 
 @app.route("/delete", methods=['GET','POST'])
-def dirpay():
+def dirdel():
     return render_template("DelEmp.html")
 
 @app.route("/empattend", methods=['POST'])
