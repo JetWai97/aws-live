@@ -89,15 +89,15 @@ def EmpAtt():
 
 @app.route("/fetchdata", methods=['GET','POST'])
 def GetEmpData():
-    emp_id = request.form["emp_id"]
+    emp_id = request.form['emp_id']
     mycursor = db_conn.cursor()
-    getempdata = "select * from employee where emp_id = %s"
+    getempdata = "select * from employee WHERE emp_id = %s"
     mycursor.execute(getempdata,(emp_id))
     result = mycursor.fetchall()
     (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]
     image = showimage(custombucket)
-    print(result,image)
-    return render_template('GetNewEmpOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary,image=image)
+
+    return render_template('GetNewEmpOut.html', GetEmpData=GetEmpData)
 
 def showimage(bucket):
     s3_client = boto3.client('s3')
@@ -106,10 +106,10 @@ def showimage(bucket):
     emp_id = request.form['emp_id']
     
     for item in s3_client.list_objects(Bucket=bucket)['Contents']:
-        pressigned_url = s3_client.generate_pressigned_url ('getobject' , 
+        presigned_url = s3_client.generate_presigned_url ('getobject' , 
         Params = {'Bucket':bucket, 'Key':item['Key']} , ExpiresIn = 100)
-        if emp_id in pressigned_url:
-            public_urls.append(pressigned_url)
+        if emp_id in presigned_url:
+            public_urls.append(presigned_url)
 
         return public_urls
 
