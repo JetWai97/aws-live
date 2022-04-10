@@ -101,7 +101,7 @@ box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     #button {
                 width: 600px;
             border: 2px solid white;
-            background-image: url('image/bg2.jpeg');
+            background-image: url('static/image/bg2.jpeg');
             border-radius: 5px;
 			height: 45px;
 			 text-align:center;
@@ -162,7 +162,7 @@ var loadFile = function(event) {
 				<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
                    <div id="button"> <a href="/getempdata">GET EMPLOYEE INFORMATION</a></div>
 					<!-- <button type="submit" formaction="/getemp" style="background-image: url('static/image/bg2.jpeg'); height: 45px; width: 600px;font-size:16px; color:white; font:oblique; cursor: pointer;">GET EMPLOYEE INFORMATION</button><br><br> -->
-					<img src="image/up.png" class="img" alt="upImg" id="output"></a>
+					<img src="{{url_for('static', filename='/image/up.png')}}" class="img" alt="upImg" id="output"></a>
 					<br>
 					Profile Image: <input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey" onchange="loadFile(event);">
 </center>
