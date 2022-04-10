@@ -69,14 +69,15 @@ def EmpAtt():
 
     insert_sql = "INSERT INTO attendance VALUES (%s, %s)"
     cursor = db_conn.cursor()
+    
+    now = datetime.datetime.now()
 
-    dt = datetime.datetime.strftime("%Y-%m-%d %H:%M:%S") 
     
     try:
 
         cursor.execute(insert_sql, (emp_id, attstatus))
         db_conn.commit()
-        successsta = "Employee " + emp_id + " has checked in at the time" + dt
+        successsta = "Employee " + emp_id + " has checked in at the time" + now.strftime("%Y-%m-%d %H:%M:%S") 
 
     except Exception as e:
             return str(e)
