@@ -120,7 +120,7 @@ def GetEmpData():
     result = mycursor.fetchall()
     (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]   
     
-    image_url = show_image(BUCKET)
+    image_url = show_image(bucket)
     
     def show_image(bucket):
     s3_client = boto3.client('s3')
