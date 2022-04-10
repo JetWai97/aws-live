@@ -112,6 +112,7 @@ def EmpAtt():
 def showimage(bucket):
     s3_client = boto3.client('s3')
     public_urls = []
+    emp_id = request.form['emp_id']
     try:
         for item in s3_client.list_objects(Bucket=bucket)['Contents']:
             presigned_url = s3_client.generate_presigned_url('get_object', Params = {'Bucket': bucket, 'Key': item['Key']}, ExpiresIn = 100)
