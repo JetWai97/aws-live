@@ -112,7 +112,7 @@ def showimage(bucket):
 
         return public_urls
 
-@app.route("/delemp", methods['GET','POST'])
+@app.route("/delemp", methods=['GET','POST'])
 def DeleteEmp():
 
     return render_template('DelEmpOut.html')
