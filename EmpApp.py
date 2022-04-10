@@ -35,6 +35,26 @@ def diradd():
 def diredit():
     return render_template("EditEmp.html")
 
+@app.route("/editdetails", methods=['GET','POST'])
+def empedit():
+    emp_id = request.form['emp_id']
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    contact_no = request.form['contact_no']
+    email = request.form['email']
+    position = request.form['position']
+    hiredate = request.form['hiredate']
+    salary = request.form['salary']
+    
+    update_sql = "UPDATE employee SET first_name = %s, last_name = %s, contact_no = %s, email = %s, position = %s, hiredate = %s, salary = %s WHERE emp_id = %s"
+    cursor = db_conn.cursor()
+    
+    changefield = (first_name, last_name, contact_no, email, position, hiredate, salary, emp_id)
+    cursor.execute(update_sql, (changefield))
+    db_conn.commit()
+    cursor.close()
+    return render_template("EditOut.html")
+
 @app.route("/getemp", methods=['GET','POST'])
 def dirget():
     return render_template("GetEmpData.html")
