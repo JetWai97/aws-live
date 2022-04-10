@@ -102,7 +102,7 @@ footer{
 <!-------------------------header------------------------->
 
 <div class="header">
-			<a  href="/home"><img src="url('https://github.com/JetWai97/aws-live/blob/46a6f77b4e9c9ef3f1486a6c5a0d00a4101a0f96/image/companyLogo.jpg')" class="logo" alt="logo"></a>
+			<a  href="/home"><img src="{{url_for('templates', filename='/image/companyLogo.jpg')}}" class="logo" alt="logo"></a>
 			<div class="header-right">
 			<a class="active" href="/">Home</a>
 			<a  href="/addnewemp">Add Employee</a>
@@ -122,15 +122,15 @@ footer{
 <br>
 <div id="slideshow">	
 	<div class="Slides">
-		<img src="url('https://github.com/JetWai97/aws-live/blob/46a6f77b4e9c9ef3f1486a6c5a0d00a4101a0f96/image/slideshow.jpg')">
+		<img src="{{url_for('templates', filename='/image/slideshow.jpg')}}">
     </div>
 
     <div class="Slides">
-	    <img src="url('https://github.com/JetWai97/aws-live/blob/d7c198815f16f4bc46daa65697782a52e612aa38/image/slideshow2.jpeg')">
+	    <img src="{{url_for('templates', filename='/image/slideshow2.jpeg')}}">
 	</div>
 
     <div class="Slides">
-	    <img src="url('https://github.com/JetWai97/aws-live/blob/d7c198815f16f4bc46daa65697782a52e612aa38/image/slideshow3.jpg')">
+	    <img src="{{url_for('templates', filename='/image/slideshow3.jpg')}}">
 	</div>
 
  
