@@ -5,50 +5,149 @@
 </head>
 
 <style>
+   * {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: sans-serif; Montserrat;
+  font-weight: bold;
+    background-image: url('image/bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  
+}
+
+.logo{
+	width: 200px;
+	height: 100px;
+}
+
+
+.header {
+  overflow: hidden;
+  background-color: #192436;
+  padding: 5px 50px 5px 30px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 22px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.active {
+  color: white;
+  background-color: #34495E;
+}
+
+.header a:hover {
+  background-color: #154360;
+}
+
+.header-right {
+  float: right;
+  padding-top: 40px
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  
+  .header-right {
+    float: none;
+  }
+}
+
+#bgBox{
+background-color: white;
+width: 700px;
+margin: 5% auto;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+ 
+ .bgBoxsmall{
+ padding-right: 100px
+ 
+ 
+ }
+
+
     #button {
         width: 8em;
-        border: 2px solid green;
-        background: #ffe;
+        border: 2px solid white;
+        background: white;
         border-radius: 5px;
     }
-    a {
-        display: block;
-        width: 100%;
-        line-height: 2em;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-    }
-    a:hover {
-        color: red;
-        background: #eff;
-    }
-    </style>
+  
+	 #btnStyle{
+ 
+ background-image: url('image/bg.jpg');
+ }
+ 
+	footer{
+	clear: left;
+}
 
+img {
+width: 200px;
+height: 200px;
+  border-radius: 8px;
+}
+
+    </style>
+ <body>
+			<!-------------------------header------------------------->
+
+			<div class="header">
+			<a href="Home.html"><img src="image/companyLogo.jpg" class="logo" alt="logo"></a>
+			<div class="header-right">
+			<a href="Home.html">Home</a>
+			<a  href="AddNewEmp.html">Add Employee</a>
+			<a  href="DelEmp.html">Remove Employee</a>
+			<a  href="GetEmpData.html">Search Employee</a>
+			<a href="EmpAtt.html">Attendance</a>
+			<a class="active" href="Payroll.html">Payroll</a>
+			</div>
+  
+			</div>
 <center>
 	<font color="black" size="4" style="font-family: avenir">
+<div id="bgBox">
+		<h1 style="color: black">Employee Payroll System</h1>
 
-		<h1 style="color: black">Payroll System</h1>
-
-		<body bgcolor="white">
+	
 
             <form action="/payroll" autocomplete="on" method="POST" enctype="multipart/form-data">
 
-                <h2 style="color: grey">Enter Employee ID</h2>
+                <h3 style="color: grey">Please Enter Employee ID</h3>
 
                 Employee ID:<br> <input style="height:25px;font-size:14pt;" type="number" name="emp_id" autofocus size="40"><br><br>
 
-                Update Salary:<br> <input style="height:25px;font-size:14pt;" type="number" name="salary" autofocus size="40"><br><br>
+                New Salary:<br> RM &nbsp <input style="height:25px;font-size:14pt; width: 200px;" type="number" name="salary" autofocus size="40"><br><br>
 
-                <button type="submit" style="background: black; height: 45px; width: 200px; color: white; size: 5; font:oblique;">UPDATE PAYROLL</button>
+                <button type="submit" style="background-image: url('image/bg.jpg'); height: 45px; width: 600px; color: white; font-size: 16px; font:oblique; cursor:pointer">UPDATE PAYROLL</button>
 
             </form>
-
+	</div>
 
 			<br><br>
 
-		</body>
+	
 
 	</font>
+		</body>
 </center>
 </html>
