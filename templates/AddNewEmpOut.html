@@ -22,7 +22,7 @@ body {
   margin: 0;
   font-family: sans-serif; Montserrat;
   font-weight: bold;
-    background-image: url('image/bg.jpg');
+    background-image: url('static/image/bg.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
@@ -105,7 +105,7 @@ height: 200px;
         #button {
             width: auto;
             border: 2px solid white;
-            background-image: url('image/bg.jpg');
+            background-image: url('static/image/bg.jpg');
             border-radius: 5px;
 			height: 50px;
 			 text-align:center;
@@ -117,7 +117,7 @@ height: 200px;
 		
 		<body>
 <div class="header">
-			<a  href="/"><img src="image/companyLogo.jpg" class="logo" alt="logo"></a>
+			<a  href="/"><img src="{{url_for('static', filename='/image/companyLogo.jpg')}}" class="logo" alt="logo"></a>
 			<div class="header-right">
 			<a  href="/">Home</a>
 			<a  href="/addnewemp">Add Employee</a>
