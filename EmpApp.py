@@ -39,7 +39,7 @@ def dirget():
 def diratt():
     return render_template("EmpAtt.html")
 
-@app.route("/update", methods=['GET','POST'])
+@app.route("/payroll", methods=['GET','POST'])
 def dirupdate():
     return render_template('Payroll.html')
 
