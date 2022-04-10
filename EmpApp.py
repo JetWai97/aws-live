@@ -99,7 +99,7 @@ def EmpAtt():
 
         cursor.execute(insert_sql, (emp_id, attstatus))
         db_conn.commit()
-        status = "Employee " + emp_id + " has checked in at the date 10 April 2020." 
+        status = "Employee " + emp_id + " has checked in at the date 11 April 2020." 
 
     except Exception as e:
             return str(e)
