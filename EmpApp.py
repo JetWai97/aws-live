@@ -119,7 +119,7 @@ def GetEmpData():
     result = mycursor.fetchall()
     (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]   
 
-    return render_template('GetNewEmpOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary)
+    return render_template('GetEmpDataOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary)
 
 
 @app.route("/delempsuc", methods=['GET','POST'])
