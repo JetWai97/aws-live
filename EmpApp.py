@@ -45,8 +45,8 @@ def dirupdate():
 
 @app.route("/payupdate", methods=['GET','POST'])
 def dirpay():
-    emp_id = request.form.get['emp_id']
-    salary = request.form.get['salary']
+    emp_id = request.form['emp_id']
+    salary = request.form['salary']
 
     updatesql = "UPDATE employee SET salary= %s WHERE emp_id = %s"
     mycursor = db_conn.cursor()
