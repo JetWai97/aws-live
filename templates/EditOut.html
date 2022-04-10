@@ -115,9 +115,9 @@ height: 200px;
 
 	<body>
 <div class="header">
-			<a  href="/"><img src="image/companyLogo.jpg" class="logo" alt="logo"></a>
+			<a  href="/"><img src="{{url_for('static', filename='/image/companyLogo.jpg')}}" class="logo" alt="logo"></a>
 			<div class="header-right">
-			<a class="active" href="/">Home</a>
+			<a  href="/">Home</a>
 			<a  href="/addnewemp">Add Employee</a>
 			<a  href="/delemp">Remove Employee</a>
 			<a  href="/getemp">Search Employee</a>
