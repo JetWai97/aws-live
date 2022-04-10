@@ -119,9 +119,7 @@ def DeleteEmp():
     deleteemp = "DELETE FROM employee WHERE emp_id = %s"
     mycursor.execute(deleteemp,(emp_id))
     db_conn.commit()
-    deleteatt = "DELETE FROM attendance WHERE emp_id = %s"
-    mycursor.execute(deleteatt,(emp_id))
-    db_conn.commit()
+    
 
     s3_client = boto3.client('s3')
     emp_image_file_name_in_s3 = "emp_id" + str(emp_id) + "_image_file"
