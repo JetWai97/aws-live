@@ -97,7 +97,7 @@ def GetEmpData():
     (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]
     image = showimage(custombucket)
 
-    return render_template('GetNewEmpOut.html', GetEmpData=GetEmpData)
+    return render_template('GetNewEmpOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary,image=image)
 
 def showimage(bucket):
     s3_client = boto3.client('s3')
