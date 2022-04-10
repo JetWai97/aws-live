@@ -96,24 +96,10 @@ def GetEmpData():
     getempdata = "select * from employee WHERE emp_id = %s"
     mycursor.execute(getempdata,(emp_id))
     result = mycursor.fetchall()
-    (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]
-    image = showimage(custombucket)
+    (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]   
 
-    return render_template('GetNewEmpOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary,image=image)
+    return render_template('GetNewEmpOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary)
 
-def showimage(bucket):
-    s3_client = boto3.client('s3')
-    public_urls = []
-
-    emp_id = request.form['emp_id']
-    
-    for item in s3_client.list_objects(Bucket=bucket)['Contents']:
-        presigned_url = s3_client.generate_presigned_url ('getobject' , 
-        Params = {'Bucket':bucket, 'Key':item['Key']} , ExpiresIn = 100)
-        if emp_id in presigned_url:
-            public_urls.append(presigned_url)
-
-        return public_urls
 
 @app.route("/delempsuc", methods=['GET','POST'])
 def DeleteEmp():
