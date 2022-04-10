@@ -127,7 +127,9 @@ height: 200px;
 
 			<form>
 
-					{{ image_url }} <br><br>
+					{% for item in contents %}
+					<img src={{ item }} style="width: 250px"><br><br>
+					{% endfor %}
                    
 			  		Employee ID:<br> {{ emp_id }} <br><br>
 
