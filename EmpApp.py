@@ -31,6 +31,10 @@ def home():
 def diradd():
     return render_template("AddNewEmp.html")
 
+@app.route("/editemp", methods=['GET','POST'])
+def diredit():
+    return render_template("EditEmp.html")
+
 @app.route("/getemp", methods=['GET','POST'])
 def dirget():
     return render_template("GetEmpData.html")
