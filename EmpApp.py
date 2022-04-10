@@ -5,6 +5,7 @@ import os
 import boto3
 from config import *
 import datetime
+import image
 
 app = Flask(__name__)
 
