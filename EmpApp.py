@@ -122,7 +122,7 @@ def DeleteEmp():
     
 
     s3_client = boto3.client('s3')
-    emp_image_file_name_in_s3 = "emp_id-" + str(emp_id) + "_image_file"
+    emp_image_file_name_in_s3 = "emp-id-" + str(emp_id) + "_image_file"
     s3_client.delete_object(Bucket=custombucket, Key=emp_image_file_name_in_s3)
     return render_template('DelEmpOut.html')
 
