@@ -109,7 +109,7 @@ def EmpAtt():
 
     return render_template('EmpAttOut.html', status=status)
 
-def show_image(bucket):
+def showimage(bucket):
     s3_client = boto3.client('s3')
     public_urls = []
     try:
@@ -129,7 +129,7 @@ def GetEmpData():
     mycursor.execute(getempdata,(emp_id))
     result = mycursor.fetchall()
     (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]   
-    image_url = show_image(bucket)
+    image_url = showimage(bucket)
 
     return render_template('GetEmpDataOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary,image_url=image_url)
 
