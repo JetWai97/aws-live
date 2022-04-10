@@ -4,8 +4,7 @@
 
 <title>Home Page</title>
 
-<!----------------------external link--------------------->
-<link rel="stylesheet" type="text/css" href="Oopps.css">
+
 
 <style>
 * {box-sizing: border-box;}
@@ -14,8 +13,14 @@ body {
   margin: 0;
   font-family: sans-serif; Montserrat;
   font-weight: bold;
+  background-color: #fff;
   
 }
+.logo{
+	width: 200px;
+	height: 100px;
+}
+
 
 .header {
   overflow: hidden;
@@ -84,6 +89,9 @@ body {
 	background-color: #717171;
 }
 
+footer{
+	clear: left;
+}
 
 }
 
@@ -91,19 +99,18 @@ body {
 </head>
 
 <body>
-<form action="/home" autocomplete="on" method="POST">
 <!-------------------------header------------------------->
 
 <div class="header">
-  <a href="Home.html"><img src="/templates/image/companyLogo.jpg" class="logo" alt="logo"></a>
-  <div class="header-right">
-    <a class="active" href="/home">Home</a>
-    <a href="/addnewemp">Add New Employee</a>
-    <a href="/getempdata">Search Employee</a>
-	<a href="/delete">Remove Existing Employee</a>
-	<a href="/empatt">Attendance</a>
-	<a href="/payroll">Payroll</a>
-  </div>
+			<a  href="Home.html"><img src="image/companyLogo.jpg" class="logo" alt="logo"></a>
+			<div class="header-right">
+			<a class="active" href="Home.html">Home</a>
+			<a  href="AddNewEmp.html">Add Employee</a>
+			<a  href="DelEmp.html">Remove Employee</a>
+			<a  href="GetEmpData.html">Search Employee</a>
+			<a href="EmpAtt.html">Attendance</a>
+			<a  href="Payroll.html">Payroll</a>
+			</div>
   
 </div>
 
@@ -115,15 +122,15 @@ body {
 <br>
 <div id="slideshow">	
 	<div class="Slides">
-		<img src="/templates/image/slideshow.jpg">
+		<img src="image/slideshow.jpg">
     </div>
 
     <div class="Slides">
-	    <img src="/templates/image/slideshow2.jpeg">
+	    <img src="image/slideshow2.jpeg">
 	</div>
 
     <div class="Slides">
-	    <img src="/templates/image/slideshow3.jpg">
+	    <img src="image/slideshow3.jpg">
 	</div>
 
  
@@ -167,6 +174,5 @@ function showSlides() {
 </div>
 
 </footer>
-</form>
 </body>
 </html>
