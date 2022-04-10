@@ -31,7 +31,7 @@ def home():
 def diradd():
     return render_template("AddNewEmp.html")
 
-@app.route("/getempdata", methods=['GET','POST'])
+@app.route("/getemp", methods=['GET','POST'])
 def dirget():
     return render_template("GetEmpData.html")
 
@@ -63,7 +63,7 @@ def dirdel():
 @app.route("/empattend", methods=['POST'])
 def EmpAtt():
     now = datetime.datetime.now()
-    now.strftime("%y-%m-%d %H:%M:%S")
+    datetime = now.strftime("%y-%m-%d, %H:%M:%S")
 
     emp_id = request.form['emp_id']
     attstatus = request.form['attstatus']
@@ -75,7 +75,7 @@ def EmpAtt():
 
         cursor.execute(insert_sql, (emp_id, attstatus))
         db_conn.commit()
-        successsta = "" + emp_id + " has checked in at the time" + now
+        successsta = "" + emp_id + " has checked in at the time" + datetime
 
     except Exception as e:
             return str(e)
