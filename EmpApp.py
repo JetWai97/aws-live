@@ -70,7 +70,7 @@ def EmpAtt():
     insert_sql = "INSERT INTO attendance VALUES (%s, %s)"
     cursor = db_conn.cursor()
 
-    dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
+    dt = datetime.datetime.strftime("%Y-%m-%d %H:%M:%S") 
     
     try:
 
