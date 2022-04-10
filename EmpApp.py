@@ -120,11 +120,19 @@ def GetEmpData():
     result = mycursor.fetchall()
     (emp_id,first_name,last_name,contact_no,email,position,hiredate,salary) = result[0]   
     
+    image_url = show_image(BUCKET)
+    
+    def show_image(bucket):
     s3_client = boto3.client('s3')
-    emp_image_file_name_in_s3 = "emp-id-" + str(emp_id) + "_image_file"
-    s3_client.get_object(Bucket='bucket', Key=item['Key'])
-    boto3.client('s3').get_bucket_location(Bucket=custombucket)
-    s3_location = (bucket_location['LocationConstraint'])
+    public_urls = []
+    try:
+        for item in s3_client.list_objects(Bucket=bucket)['Contents']:
+            presigned_url = s3_client.generate_presigned_url('get_object', Params = {'Bucket': bucket, 'Key': item['Key']}, ExpiresIn = 100)
+            public_urls.append(presigned_url)
+    except Exception as e:
+        pass
+    # print("[INFO] : The contents inside show_image = ", public_urls)
+    return public_urls
 
     return render_template('GetEmpDataOut.html', emp_id=emp_id,first_name=first_name,last_name=last_name,contact_no=contact_no,email=email,position=position,hiredate=hiredate,salary=salary,image_url=image_url)
 
