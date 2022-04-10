@@ -75,7 +75,7 @@ def EmpAtt():
 
         cursor.execute(insert_sql, (emp_id, attstatus))
         db_conn.commit()
-        successsta = "Employee " + emp_id + " has checked in at the date 10 April 2020." 
+        status = "Employee " + emp_id + " has checked in at the date 10 April 2020." 
 
     except Exception as e:
             return str(e)
@@ -83,7 +83,7 @@ def EmpAtt():
     finally:
         cursor.close()
 
-    return render_template('EmpAttOut.html', status=successsta)
+    return render_template('EmpAttOut.html', status=status)
 
 
 @app.route("/fetchdata", methods=['GET','POST'])
